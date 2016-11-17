@@ -1,0 +1,10 @@
+---
+
+- name: clone my dotfiles
+  git: repo=https://github.com/tahia-khan/.dotfiles.git
+      dest={{ dotfiles_dir }}
+  register: result
+
+- name: run dotfile install script
+  command: {{ dotfiles_dir }}/install.sh
+  when: result|succeeded

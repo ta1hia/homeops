@@ -1,0 +1,28 @@
+---
+
+- home_dir: /home/{{ this_user }}
+
+- user_dirs:
+    - .desktop
+    - incoming
+    - .templates
+    - shared
+    - docs
+    - media/music
+    - media/p
+    - media/v
+    - dev/co
+    - dev/sw
+    - dev/re
+    - tmp
+    - .private
+
+- absent_dirs:
+    - Desktop
+    - Downloads
+    - Templates
+    - Public
+    - Documents
+    - Music
+    - Pictures
+    - Videos

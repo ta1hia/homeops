@@ -1,0 +1,4 @@
+---
+
+- dotfiles_dir: /home/{{ this_user }}/.dotfiles
+

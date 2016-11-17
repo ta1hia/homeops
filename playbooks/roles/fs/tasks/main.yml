@@ -1,0 +1,20 @@
+---
+
+- name: check that a user is defined
+  debug: msg="{{ this_user }} is defined"
+
+- name: create user directories
+  file: path={{ home_dir }}/{{ item }} state=directory
+      mode=0755 owner={{ this_user }}
+  with_items: "{{ user_dirs }}"
+  register: result
+
+- name: copy user-dirs.dirs config file
+  copy: src=user-dirs.dirs dest={{ home_dir }}/.config/user-dirs.dirs
+      owner={{ this_user }} mode=0600 backup=yes
+  when: result|succeeded
+
+- name: delete default directories
+  file: path={{ home_dir}}/{{ item }} state=absent
+  with_items: "{{ absent_dirs }}"
+  when: result|succeeded

@@ -1,0 +1,21 @@
+---
+
+common_packages:
+  - curl
+  - git
+  - htop
+  - nmap
+  - rpm
+  - python-pip
+  - python-dev
+  - virtualenv
+  - terminator
+  - screen
+  - vim
+  - wget
+  - docker
+  - virtualbox-qt
+  - vagrant
+  - keepass2
+  - nautilus-dropbox
+  - i3

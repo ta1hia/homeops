@@ -1,0 +1,9 @@
+---
+
+- name: set up ssh for this_user
+  user: user={{ this_user }} generate_ssh_keys=yes ssh_key_bits=4096
+      ssh_key_file=.ssh/id_rsa ssh_key_type=rsa
+
+- name: add ssh key to agent
+  command: /usr/bin/ssh-add /home/{{ this_user }}/.ssh/id_rsa
+
